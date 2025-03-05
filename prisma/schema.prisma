@@ -23,7 +23,7 @@ model Student {
   name        String
   age         Int
   nim         String   @unique
-  prodi       String
+  prodi       Prodi
   isGraduate  Boolean
   createdBy   User     @relation("createdBy", fields: [createdById], references: [id])
   createdById String
@@ -31,7 +31,15 @@ model Student {
   updatedAt   DateTime @updatedAt
 }
 
+enum Prodi {
+  SistemInformasi
+  TeknikInformatika
+  TeknikElektro
+  TeknikMesin
+  TeknikSipil
+}
+
 datasource db {
-  provider = "postgresql"
+  provider = "mysql"
   url      = env("DATABASE_URL")
 }
