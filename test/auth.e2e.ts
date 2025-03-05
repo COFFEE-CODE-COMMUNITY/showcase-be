@@ -1,8 +1,8 @@
 import request from 'supertest'
 import app from '../src/main'
-import { faker } from "@faker-js/faker"
 import db from "../src/utils/db"
 import * as bcrypt from 'bcrypt'
+import { faker } from "@faker-js/faker"
 
 describe('POST /api/v1/auth/admin/register', () => {
   afterEach(async () => {
