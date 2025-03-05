@@ -1,10 +1,10 @@
 import app from '../src/main'
 import db from '../src/utils/db'
 import request from 'supertest'
-import * as bcrypt from "bcrypt"
 import jwt from "jsonwebtoken"
 import { faker } from "@faker-js/faker"
 import { Prodi, Student } from "@prisma/client"
+import * as bcrypt from "bcrypt"
 
 let userToken: string
 let userId: string
