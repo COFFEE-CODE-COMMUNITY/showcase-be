@@ -43,7 +43,7 @@ describe('POST /api/v1/students', () => {
       })
 
     expect(res.status).toBe(201)
-    expect(res.body.message).toEqual('Student created successfully')
+    expect(res.body.message).toEqual('Student has been created')
     expect(res.body.data).toBeDefined()
   })
 
@@ -168,7 +168,7 @@ describe('PATCH /api/v1/students/:id', () => {
       })
 
     expect(res.status).toBe(200)
-    expect(res.body.message).toEqual('Student updated successfully')
+    expect(res.body.message).toEqual('Student has been updated')
     expect(res.body.data).toBeDefined()
   })
 

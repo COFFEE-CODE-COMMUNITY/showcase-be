@@ -33,7 +33,7 @@ export async function registerAdmin(req: Request, res: Response, next: NextFunct
 
   const { id: userId } = await db.user.create({ data, select: { id: true } })
 
-  res.status(201).json({ message: "User registered successfully", data: { token: generateUserToken(userId) } })
+  res.status(201).json({ message: "Register success", data: { token: generateUserToken(userId) } })
   return
 }
 
@@ -58,11 +58,11 @@ export async function loginAdmin(req: Request, res: Response, next: NextFunction
   const { success } = await validationSchema.safeParseAsync(req.body)
 
   if (!success) {
-    res.status(401).json({ message: "Invalid credentials" })
+    res.status(401).json({ message: "Email or password is wrong" })
     return
   }
 
-  res.status(200).json({ message: "User logged in successfully", data: { token: generateUserToken(user!.id) } })
+  res.status(200).json({ message: "Log in success", data: { token: generateUserToken(user!.id) } })
   return
 }
 

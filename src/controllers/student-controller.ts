@@ -32,7 +32,7 @@ export async function createStudent(req: Request, res: Response, next: NextFunct
 
   const student = await db.student.create({ data: { ...data, createdById: req.userId } })
 
-  res.status(201).json({ message: "Student created successfully", data: student })
+  res.status(201).json({ message: "Student has been created ", data: student })
   return
 }
 
@@ -96,7 +96,7 @@ export async function updateStudent(req: Request, res: Response, next: NextFunct
 
   const updatedStudent = await db.student.update({ where: { id: req.params.id }, data: data })
 
-  res.json({ message: "Student updated successfully", data: updatedStudent })
+  res.json({ message: "Student has been updated", data: updatedStudent })
 }
 
 export async function deleteStudent(req: Request, res: Response, next: NextFunction): Promise<void> {

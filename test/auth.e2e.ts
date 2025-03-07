@@ -20,7 +20,7 @@ describe('POST /api/v1/auth/admin/register', () => {
 
     expect(res.status).toBe(201)
     expect(res.body.data.token).toBeDefined()
-    expect(res.body.message).toEqual('User registered successfully')
+    expect(res.body.message).toEqual('Register success')
   })
 
   it('should response 400', async () => {
@@ -56,7 +56,7 @@ describe('POST /api/v1/auth/admin/login', () => {
 
     expect(res.status).toBe(200)
     expect(res.body.data.token).toBeDefined()
-    expect(res.body.message).toEqual('User logged in successfully')
+    expect(res.body.message).toEqual('Log in success')
   })
 
   it('should response 401', async () => {
@@ -65,6 +65,6 @@ describe('POST /api/v1/auth/admin/login', () => {
       .send({ username: 'username', password: 'password' })
 
     expect(res.status).toBe(401)
-    expect(res.body.message).toEqual('Invalid credentials')
+    expect(res.body.message).toEqual('Email or password is wrong')
   })
 })
